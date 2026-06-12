@@ -1,0 +1,134 @@
+---
+import { color, spacing, typography, motion } from "../tokens/index.js";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tokens de Diseño - VIREL_COzen</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #f5f5f5;
+        padding: 2rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin-bottom: 3rem;
+        color: #1a1a1a;
+      }
+
+      .tokens-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .token-section {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .token-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+
+      .token-item {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .token-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .token-label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 0.5rem;
+      }
+
+      .token-value {
+        font-size: 0.875rem;
+        color: #999;
+        font-family: "Courier New", monospace;
+      }
+
+      .color-sample {
+        width: 60px;
+        height: 60px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tokens de Diseño - VIREL_COzen</h1>
+      
+      <div class="tokens-grid">
+        <div class="token-section">
+          <h2>Color</h2>
+          {Object.entries(color || {}).map(([key, value]) => (
+            <div class="token-item">
+              <div class="token-label">{key}</div>
+              <div class="token-value">{value}</div>
+              <div class="color-sample" style={`background-color: ${value}`}></div>
+            </div>
+          ))}
+        </div>
+
+        <div class="token-section">
+          <h2>Espaciado</h2>
+          {Object.entries(spacing || {}).map(([key, value]) => (
+            <div class="token-item">
+              <div class="token-label">{key}</div>
+              <div class="token-value">{value}</div>
+            </div>
+          ))}
+        </div>
+
+        <div class="token-section">
+          <h2>Tipografía</h2>
+          {Object.entries(typography || {}).map(([key, value]) => (
+            <div class="token-item">
+              <div class="token-label">{key}</div>
+              <div class="token-value">{JSON.stringify(value)}</div>
+            </div>
+          ))}
+        </div>
+
+        <div class="token-section">
+          <h2>Movimiento</h2>
+          {Object.entries(motion || {}).map(([key, value]) => (
+            <div class="token-item">
+              <div class="token-label">{key}</div>
+              <div class="token-value">{JSON.stringify(value)}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
