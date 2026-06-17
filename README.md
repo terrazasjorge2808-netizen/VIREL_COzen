@@ -20,6 +20,9 @@ A contemplative editorial framework based on Astro + React for creating minimali
 - Silent grids.  
 - Typographic components.
 
+ # ✧ Instalación
+ npm install
+
 ### Phase 3 — UI Components  
 - Editorial blocks.  
 - Contemplative overlays.  
