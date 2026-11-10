@@ -1,4 +1,5 @@
 ---
+import { Analytics } from '@vercel/analytics/react';
 const { title = "VIREL_COzen" } = Astro.props;
 ---
 
@@ -11,5 +12,6 @@ const { title = "VIREL_COzen" } = Astro.props;
 
   <body>
     <slot />
+    <Analytics client:load />
   </body>
 </html>
