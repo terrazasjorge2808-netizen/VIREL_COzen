@@ -1,4 +1,6 @@
 ---
+import { Analytics } from '@vercel/analytics/react';
+
 interface Props {
   title?: string;
   description?: string;
@@ -30,6 +32,7 @@ const {
     <div class="docs-shell">
       <slot />
     </div>
+    <Analytics client:load />
   </body>
 </html>
 
